@@ -1,7 +1,7 @@
 {
-    "name": "royopa/MSAccessDBALDriver",
+    "name": "royopa/ms-access-dbal-driver",
     "description": "A DBAL driver to use with MS Access",
-    "homepage": "https://github.com/royopa/mat-lab-php",
+    "homepage": "https://github.com/royopa/MSAccessDBALDriver",
     "license": "MIT",
     "authors": [
         {
