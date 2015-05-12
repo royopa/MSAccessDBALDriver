@@ -13,7 +13,7 @@ in your composer.json file:
 ```json
 {
     "require": {
-        "royopa/MSAccessDBALDriver": "dev-master"
+        "royopa/ms-access-dbal-driver": "dev-master"
     }
 }
 ```
