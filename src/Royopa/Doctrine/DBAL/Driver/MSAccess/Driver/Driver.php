@@ -61,12 +61,12 @@ class Driver implements \Doctrine\DBAL\Driver
 
     public function getDatabasePlatform()
     {
-        return new \Doctrine\DBAL\Platforms\MsSqlPlatform();
+        return new \Doctrine\DBAL\Platforms\SQLServerPlatform();
     }
 
     public function getSchemaManager(\Doctrine\DBAL\Connection $conn)
     {
-        return new \Doctrine\DBAL\Schema\MsSqlSchemaManager($conn);
+        return new \Doctrine\DBAL\Schema\SQLServerSchemaManager($conn);
     }
 
     public function getName()
