@@ -19,7 +19,7 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Royopa\MSAccessDBALDriver\Doctrine\DBAL\Driver\MSAccess;
+namespace Royopa\Doctrine\DBAL\Driver\MSAccess\Driver;
 
 /**
  * PDODblib Connection implementation.
