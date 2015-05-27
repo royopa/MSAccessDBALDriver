@@ -105,38 +105,15 @@ class Connection extends \Doctrine\DBAL\Driver\PDOConnection implements \Doctrin
     }
 
     /**
-     * @return bool PDO_DBlib::lastInsertId support
-     */
-    private function _pdoLastInsertId()
-    {
-        if (!is_null($this->_pdoLastInsertIdSupport)) {
-            return $this->_pdoLastInsertIdSupport;
-        }
-
-        $supported = false;
-        try {
-            $supported = true;
-            parent::lastInsertId();
-        } catch (\PDOException $e) {
-            $supported = false;
-        }
-
-        return $this->_pdoLastInsertIdSupport = $supported;
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function lastInsertId($name = null)
     {
         $id = null;
-        if ($this->_pdoLastInsertId() === true) {
-            $id = parent::lastInsertId();
-        } else {
-            $stmt = $this->query('SELECT SCOPE_IDENTITY()');
-            $id = $stmt->fetchColumn();
-            $stmt->closeCursor();
-        }
+
+        $stmt = $this->query('SELECT SCOPE_IDENTITY() AS LastInsertId');
+        $id = $stmt->fetchColumn();
+        $stmt->closeCursor();
 
         return $id;
     }
